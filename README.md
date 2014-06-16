@@ -1,0 +1,2 @@
+knockout-image-rotator
+======================
