@@ -11,14 +11,9 @@ var ImageRotator = (function(ko) {
         }
       };
 
-      window.addEventListener('resize', function() {
-        var images = document.querySelectorAll('.rotated-image');
-        var event = new Event('image-resize');
-        for (var i = 0, len = images.length; i < len; i++) {
-          var image = images[i];
-          image.dispatchEvent(event);
-        }
-      }, true);
+      $(window).on('resize', function() {
+        $('.rotated-image').trigger('resize.image');
+      });
     }
   };
 })(window.ko);

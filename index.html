@@ -3,20 +3,131 @@
   <head>
     <title>Knockout Image Rotator</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/knockout-image-rotator.css" />    
     <link rel="stylesheet" href="assets/css/docs.css" />
   </head>
   <body>  
-    <div id="rotationTests" data-bind="foreach: { data: images, as: 'image' }">
-      <div class="rotated-image-wrapper"
-           data-bind="rotatedImage: image.element, 
-                      style: { height: image.properties.height }">
+
+    <div id="rotationTests" class="table">
+      <div class="th">
+        <div class="td">Before</div>
+        <div class="td">After</div>
       </div>
+
+      <!-- Case 1 -->
+      <div class="tr">
+        <div class="td">
+          <img alt="1" class="not-rotated-image" src="assets/images/1-up.jpg" />
+        </div>
+        <div class="td">
+          <div id="case1"
+               class="rotated-image-wrapper"
+               data-bind="rotatedImage: element, style: { height: properties.height }">
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="tr">
+        <div class="td">
+          <img alt="2" class="not-rotated-image" src="assets/images/2-up-mirrored.jpg" />
+        </div>
+        <div class="td">
+          <div id="case2"
+               class="rotated-image-wrapper"
+               data-bind="rotatedImage: element, style: { height: properties.height }">
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="tr">
+        <div class="td">
+          <img alt="3" class="not-rotated-image" src="assets/images/3-down.jpg" />
+        </div>
+        <div class="td">
+          <div id="case3"
+               class="rotated-image-wrapper"
+               data-bind="rotatedImage: element, style: { height: properties.height }">
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 4 -->
+      <div class="tr">
+        <div class="td">
+          <img alt="4" class="not-rotated-image" src="assets/images/4-down-mirrored.jpg" />
+        </div>
+        <div class="td">
+          <div id="case4"
+               class="rotated-image-wrapper"
+               data-bind="rotatedImage: element, style: { height: properties.height }">
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 5 -->
+      <div class="tr">
+        <div class="td">
+          <img alt="5" class="not-rotated-image" src="assets/images/5-left-mirrored.jpg" />
+        </div>
+        <div class="td">
+          <div id="case5"
+               class="rotated-image-wrapper"
+               data-bind="rotatedImage: element, style: { height: properties.height }">
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 6 -->
+      <div class="tr">
+        <div class="td">
+          <img alt="6" class="not-rotated-image" src="assets/images/6-left.jpg" />
+        </div>
+        <div class="td">
+          <div id="case6"
+               class="rotated-image-wrapper"
+               data-bind="rotatedImage: element, style: { height: properties.height }">
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 7 -->
+      <div class="tr">
+        <div class="td">
+          <img alt="7" class="not-rotated-image" src="assets/images/7-right-mirrored.jpg" />
+        </div>
+        <div class="td">
+          <div id="case7"
+               class="rotated-image-wrapper"
+               data-bind="rotatedImage: element, style: { height: properties.height }">
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 8 -->
+      <div class="tr">
+        <div class="td">
+          <img alt="8" class="not-rotated-image" src="assets/images/8-right.jpg" />
+        </div>
+        <div class="td">
+          <div id="case8"
+               class="rotated-image-wrapper"
+               data-bind="rotatedImage: element, style: { height: properties.height }">
+          </div>
+        </div>
+      </div>
+
     </div>
-    <script src="bower_components/knockout/dist/knockout.js"></script>
-    <script src="bower_components/blueimp-load-image/js/load-image.min.js"></script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/knockout.js"></script>
+    <script src="assets/js/load-image.min.js"></script>
+
     <script src="src/ImageRotator.js"></script>
     <script src="src/RotatedImage.js"></script>
+
     <script src="assets/js/docs.js"></script>
   </body>
 </html>

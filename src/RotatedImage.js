@@ -9,43 +9,37 @@ function RotatedImage(path) {
 
   var self = this;
   var image = document.createElement('img');
-  image.addEventListener('image-resize', function() {
+  image.onload = function() {
+    var imageWidth = image.clientWidth || image.width;
+    var imageHeight = image.clientHeight || image.height;
+
+    if (self.properties.orientation() > 4) {
+      self.properties.width(imageHeight + 'px');
+      self.properties.height(imageWidth + 'px');
+      var top = (imageWidth - imageHeight) / 2;
+      self.properties.top(top + 'px');
+    } else {
+      self.properties.width(imageWidth + 'px');
+      self.properties.height(imageHeight + 'px');
+    }
+  };
+
+  $(image).on('resize.image', function() {
     self.initImage();
-  }, false);
+  });
 
   this.element = ko.observable(image);
-
   this.parseImage();
 }
 
 RotatedImage.prototype.initImage = function() {
   var self = this;
   var image = this.element();
-  image.onload = function() {
-    var imageWidth = image.clientWidth || image.width;
-    var imageHeight = image.clientHeight || image.height;
-
-    switch (self.properties.orientation()) {
-      case 5:
-      case 6:
-      case 7:
-      case 8:
-        self.properties.width(imageHeight + 'px');
-        self.properties.height(imageWidth + 'px');
-        var top = (imageWidth - imageHeight) / 2;
-        self.properties.top(top + 'px');
-        break;
-      default:
-        self.properties.width(imageWidth + 'px');
-        self.properties.height(imageHeight + 'px');
-        break;
-    }
-
-  };
-
   image.className = 'rotated-image exif-orientation-' + self.properties.orientation();
   image.style.maxWidth = '100%';
   image.setAttribute('src', this.properties.path());
+  // https://code.google.com/p/chromium/issues/detail?id=7731
+  image.onload();
 };
 
 RotatedImage.prototype.parseImage = function() {
