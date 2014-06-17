@@ -1,0 +1,11 @@
+{
+  "name": "knockout-image-rotator",
+  "devDependencies": {
+    "grunt": "~0",
+    "grunt-contrib-clean": "~0",
+    "grunt-contrib-concat": "~0",
+    "grunt-contrib-less": "~0",
+    "grunt-contrib-uglify": "*",
+    "load-grunt-tasks": "*"
+  }
+}

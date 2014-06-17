@@ -1,0 +1,26 @@
+{
+  "name": "knockout-image-rotator",
+  "description": "The 'Knockout Image Rotater' can rotate images reading their EXIF orientation values and using Knockout.js bindings.",
+  "main": "./js/image-rotator/RotatedImage.js",
+  "authors": [
+    {
+      "name": "Benny Neugebauer",
+      "email": "bn@bennyn.de",
+      "homepage": "http://www.bennyn.de"
+    }
+  ],
+  "ignore": [
+    "assets"
+  ],
+  "dependencies": {
+    "blueimp-load-image": "1.11.1",
+    "knockout": "https://github.com/knockout/knockout.git#3.1.0"
+  },
+  "devDependencies": {
+    "lesshat": "~3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bennyn/knockout-image-rotator.git"
+  }
+}

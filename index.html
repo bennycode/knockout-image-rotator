@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Knockout Image Rotator</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/knockout-image-rotator.css" />    
+    <link rel="stylesheet" href="assets/css/docs.css" />
+  </head>
+  <body>  
+    <div id="rotationTests" data-bind="foreach: { data: images, as: 'image' }">
+      <div class="rotated-image-wrapper"
+           data-bind="rotatedImage: image.element, 
+                      style: { height: image.properties.height }">
+      </div>
+    </div>
+    <script src="bower_components/knockout/dist/knockout.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image.min.js"></script>
+    <script src="src/ImageRotator.js"></script>
+    <script src="src/RotatedImage.js"></script>
+    <script src="assets/js/docs.js"></script>
+  </body>
+</html>

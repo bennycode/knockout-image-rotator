@@ -1,0 +1,8 @@
+#rotationTests {
+  width: 50%;
+}
+
+#rotationTests div {
+  border: 1px solid black;
+  background-color: gray;
+}

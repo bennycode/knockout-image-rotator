@@ -1,0 +1,39 @@
+@import "bower_components/lesshat/build/lesshat-prefixed.less";
+
+.rotated-image-wrapper {
+  text-align: center;
+  .rotated-image {
+    &.exif-orientation-2 {
+      .lh-scaleX(-1);
+    }
+
+    &.exif-orientation-3 {
+      position: relative;
+      .lh-rotate(180);
+    }
+
+    &.exif-orientation-4 {
+      .lh-scaleY(-1);
+    }
+
+    &.exif-orientation-5 {
+      position: relative;
+      .lh-transform(rotate(270deg) scaleX(-1));
+    }
+
+    &.exif-orientation-6 {
+      position: relative;
+      .lh-rotate(90);
+    }
+
+    &.exif-orientation-7 {
+      position: relative;
+      .lh-transform(rotate(90deg) scaleX(-1));
+    }
+
+    &.exif-orientation-8 {
+      position: relative;
+      .lh-rotate(270);
+    }
+  }
+}
