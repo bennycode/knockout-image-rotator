@@ -54,7 +54,7 @@ var viewModel = {
 viewModel.images().push(new RotatedImage('assets/images/1-up.jpg'));
 viewModel.images().push(new RotatedImage('assets/images/2-up-mirrored.jpg'));
 
-ko.applyBindings(viewModel, document.getElementById('wrapper'));
-
 ...
+
+ko.applyBindings(viewModel, document.getElementById('wrapper'));
 ```
