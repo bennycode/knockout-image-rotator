@@ -46,7 +46,7 @@ or:
 ImageRotator.init();
 
 var viewModel = {
-  images: ko.observableArray([]);
+  images: ko.observableArray([])
 };
 
 viewModel.images().push(new RotatedImage('assets/images/1-up.jpg'));
